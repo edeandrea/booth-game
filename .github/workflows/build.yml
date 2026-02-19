@@ -55,4 +55,6 @@ jobs:
           cache: maven
 
       - name: build-test
+        env:
+          QUARKUS_LANGCHAIN4J_TIMEOUT: 10m
         run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
