@@ -11,6 +11,7 @@
 		<maven.compiler.release>21</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<quarkus.langchain4j.version>1.7.2</quarkus.langchain4j.version>
 		<quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
 		<quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
 		<quarkus.platform.version>3.31.3</quarkus.platform.version>
@@ -24,6 +25,13 @@
 				<groupId>${quarkus.platform.group-id}</groupId>
 				<artifactId>${quarkus.platform.artifact-id}</artifactId>
 				<version>${quarkus.platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.quarkiverse.langchain4j</groupId>
+				<artifactId>quarkus-langchain4j-bom</artifactId>
+				<version>${quarkus.langchain4j.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -48,13 +56,33 @@
 			<artifactId>quarkus-smallrye-health</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>io.quarkiverse.langchain4j</groupId>
+			<artifactId>quarkus-langchain4j-openai</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-junit-mockito</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.27.7</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
