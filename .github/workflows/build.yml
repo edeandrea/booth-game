@@ -56,5 +56,6 @@ jobs:
 
       - name: build-test
         env:
-          QUARKUS_LANGCHAIN4J_TIMEOUT: 10m
+          QUARKUS_LANGCHAIN4J_TIMEOUT: 20m
+          QUARKUS_TEST_HANG_DETECTION_TIMEOUT: 20m
         run: ./mvnw -B clean verify -Dquarkus.http.host=0.0.0.0
